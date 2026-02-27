@@ -1,0 +1,22 @@
+.container {
+    height: 100vh;
+    display: grid; 
+    grid-template-rows: minmax(150px, 150px) 1fr;
+    grid-template-columns: minmax(200px, 1fr) 4fr;
+    grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: rgb(53, 176, 242);
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
