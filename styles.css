@@ -1,8 +1,12 @@
+:root {
+    --main-color: rgb(248, 247, 247);
+}
+
 .container {
     height: 100vh;
     display: grid; 
     grid-template-rows: minmax(150px, 150px) 1fr;
-    grid-template-columns: minmax(200px, 1fr) 4fr;
+    grid-template-columns: minmax(200px, 1fr) minmax(400px, 4fr);
     grid-template-areas:
     "sidebar header"
     "sidebar main"
@@ -10,8 +14,31 @@
 
 .sidebar{
     grid-area: sidebar;
-    background-color: rgb(53, 176, 242);
+    background-color: rgb(20, 153, 225);
+    padding: 16px;
 }
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.siderbar1, .middleList li, .bottomList li{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar1 svg {
+    height: 50px;
+    width: 50px;
+    fill: var(--main-color);
+}
+
+.middleList svg, .bottomList svg {
+    height: 29px;
+    width: 29px;
+    fill: var(--main-color);
+}
+
 
 .header {
     grid-area: header;
