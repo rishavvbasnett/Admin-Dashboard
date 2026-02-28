@@ -8,7 +8,7 @@
     height: 100vh;
     display: grid; 
     grid-template-rows: minmax(150px, 150px) 1fr;
-    grid-template-columns: minmax(200px, 220px) minmax(400px, 4fr);
+    grid-template-columns: minmax(200px, 220px) minmax(500px, 4fr);
     grid-template-areas:
     "sidebar header"
     "sidebar main"
@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 40px;
+    gap: 42px;
 }
 
 .sidebar ul {
@@ -33,13 +33,13 @@
 
 .sidebar span {
     color: var(--main-color);
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
 .sidebar1 span {
     color: var(--main-color);
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
 }
 
@@ -47,24 +47,24 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 12px
+    gap: 10px
 }
 .middleList li, .bottomList li{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 18px
+    gap: 14px
 }
 
 .sidebar li {
-    margin: 0 0 0 8px;
+    margin: 0 0 0 0.5rem;
 }
 
 .sidebar2>ul, .sidebar3>ul {
     padding: 0px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
 
 .sidebar1 svg {
@@ -74,14 +74,116 @@
 }
 
 .middleList svg, .bottomList svg {
-    height: 27px;
-    width: 27px;
+    height: 24px;
+    width: 24px;
     fill: var(--main-color);
 }
 
 .header {
     grid-area: header;
+    padding: 0 clamp(1rem, 2rem, 2.6rem);
+    padding-bottom: 1rem;
+
+    display: grid;
+    grid-template-columns: minmax(220px, 2.3fr) minmax(180px, 1.2fr);
+    grid-template-rows: minmax(50%, 50%) minmax(50%, 50%);
+    grid-template-areas: 
+    "topLeft topRight"
+    "bottomLeft bottomRight";
 }
+
+.header>.topLeft {
+    grid-area: topLeft;
+    display: flex;
+    gap: 1.1rem;
+    align-items: center;
+}
+
+.topLeft div {
+    min-height: 40%;
+    max-height: 40%;
+    min-width: 200px;
+    flex: 0.7;
+    border-radius: 40px;
+    background: rgb(185, 206, 221, 0.7);
+}
+
+.topLeft>svg, .topRight>svg {
+    height: 30px;
+    width: 30px;
+    min-height: 30px;
+    min-width: 30px;
+    stroke: black;
+}
+
+.header .topRight {
+    grid-area: topRight;
+    display: flex;
+    gap: clamp(1.3rem, 2rem, 2.1rem);
+    justify-content: center;
+    align-items: center;
+}
+
+.topRight img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.topRight p {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.header .bottomLeft {
+    grid-area: bottomLeft;
+    display: flex;
+    gap: 1.1rem;
+    align-items: center;
+}
+
+.bottomLeft img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.bottomLeft>div :nth-child(1) {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.bottomLeft>div :nth-child(2) {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+
+.header .bottomRight {
+    grid-area: bottomRight;
+    display: flex;
+    align-items: center;
+    gap: min(0.6rem, 1rem);
+    justify-content: space-evenly;
+}
+
+.bottomRight button {
+    all: unset;
+    padding: 0.3rem 1.5rem;
+    border-radius: 20px;
+    color: var(--main-color);
+    background: var(--main-bg);
+}
+
+
+
+
+
+
+
+
 
 .main {
     grid-area: main;
