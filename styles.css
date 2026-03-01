@@ -81,7 +81,7 @@
 
 .header {
     grid-area: header;
-    padding: 0 clamp(1rem, 2rem, 2.6rem);
+    padding: 0 clamp(1rem, 3rem, 3rem);
     padding-bottom: 1rem;
 
     display: grid;
@@ -184,7 +184,7 @@
     display: grid;
     column-gap: 1rem;
     row-gap: 10px;
-    padding: 1.4rem 2rem 2rem 2rem;
+    padding: 1.4rem 3rem 2rem 3rem;
     grid-template-columns: minmax(334px, 3.2fr) minmax(166px, 0.9fr);
     grid-template-rows: max-content 0.5fr 2px max-content 0.4fr;
     grid-template-areas: 
@@ -195,6 +195,13 @@
     "projectBox trendingBox"
     ;
 }
+
+
+.projectHeading, .announcementHeading, .trendingHeading {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
 
 .main>.projectHeading {
     grid-area: projectHeading;
@@ -219,7 +226,7 @@
 }
 
 .announcementBox p {
-    font-size: 0.7rem;
+    font-size: 0.76rem;
     line-height: 1.2;
 }
 
@@ -304,16 +311,45 @@
     place-content: center;
 }
 
+.projectBox {
+    display: grid;
+    column-gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
 
 
+.projectBox>div {
+    border: 0.5px solid black;
+    background: white;
+    border-radius: 6px;
+    border-left: 7px solid rgb(243, 189, 119);
+    padding: 1.2rem 1.2rem 1.8rem 1rem;
+    height: 200px;
+    width: 270px;
 
+    display: grid;
+    grid-template-rows: 60% 15%;
+    row-gap: 3.5rem;
+}
 
+.projectBox>div>.bottomIcons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem
+}
 
-
-
-
-.projectHeading, .announcementHeading, .trendingHeading {
-    font-size: 1.2rem;
+.projectBox .topText .title {
     font-weight: 500;
 }
 
+.projectBox .topText .body {
+    font-size: 0.84rem;
+    letter-spacing: 0.1px;
+    line-height: 1.4;
+}
+
+.projectBox svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 0.01px;
+}
